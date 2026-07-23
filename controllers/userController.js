@@ -34,8 +34,48 @@ async function signupUser(req, res) {
     res.send("Something went wrong");
   }
 }
+// Login Page
+async function getLoginPage(req, res) {
+    res.render("login");
+}
+
+// Login User
+async function loginUser(req, res) {
+    try {
+        const { email, password } = req.body;
+
+        const user = await User.findOne({ email });
+
+        if (!user) {
+            return res.send("User not found");
+        }
+
+        const isMatch = await bcrypt.compare(password, user.password);
+
+        if (!isMatch) {
+            return res.send("Incorrect Password");
+        }
+
+        req.session.user = user;
+
+        res.redirect("/");
+    } catch (error) {
+        console.log(error);
+        res.send("Login Failed");
+    }
+}
+
+// Logout
+function logoutUser(req, res) {
+    req.session.destroy(() => {
+        res.redirect("/user/login");
+    });
+}
 
 module.exports = {
-  getSignupPage,
-  signupUser,
+    getSignupPage,
+    signupUser,
+    getLoginPage,
+    loginUser,
+    logoutUser,
 };
