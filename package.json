@@ -1,0 +1,31 @@
+{
+  "name": "url-shortener",
+  "version": "1.0.0",
+  "description": "my first code",
+  "homepage": "https://github.com/afrozdaiya07/url-shortener#readme",
+  "bugs": {
+    "url": "https://github.com/afrozdaiya07/url-shortener/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/afrozdaiya07/url-shortener.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^17.4.2",
+    "ejs": "^6.0.1",
+    "express": "^5.2.1",
+    "express-session": "^1.19.0",
+    "mongoose": "^9.8.0",
+    "nanoid": "^6.0.0"
+  }
+}
