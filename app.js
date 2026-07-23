@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 require("dotenv").config();
+const userRoute = require("./routes/user");
 
 const { connectToMongoDB } = require("./connect");
 
@@ -15,6 +16,7 @@ connectToMongoDB(process.env.MONGO_URL)
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use("/user", userRoute);
 
 // Static Files
 app.use(express.static(path.join(__dirname, "public")));
