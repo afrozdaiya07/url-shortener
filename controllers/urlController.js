@@ -31,8 +31,37 @@ async function createShortURL(req, res) {
 
     res.redirect("/");
 }
+async function redirectURL(req, res) {
+    const shortId = req.params.shortId;
+
+    const entry = await URL.findOneAndUpdate(
+        {
+            shortId,
+        },
+        {
+            $inc: {
+                clicks: 1,
+            },
+            $push: {
+                visitHistory: {
+                    timestamp: Date.now(),
+                },
+            },
+        },
+        {
+            new: true,
+        }
+    );
+
+    if (!entry) {
+        return res.send("Short URL not found");
+    }
+
+    res.redirect(entry.redirectURL);
+}
 
 module.exports = {
     getHomePage,
     createShortURL,
+    redirectURL,
 };
