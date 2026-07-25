@@ -37,11 +37,29 @@ header{
 }
 
 .logout{
-    text-decoration:none;
-    color:#fff;
-    background:#6c63ff;
-    padding:10px 20px;
-    border-radius:8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border: 2px solid #6c63ff;
+    border-radius: 12px;
+    background: #fff;
+    color: #6c63ff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.logout:hover{
+    background: #6c63ff;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(108,99,255,.3);
+}
+
+.logout i{
+    font-size: 18px;
 }
 
 .card{
