@@ -16,3 +16,141 @@ body{
     background:linear-gradient(135deg,#2563eb,#7c3aed);
 
 }
+
+.container{
+
+    width:100%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+.card{
+
+    width:400px;
+
+    background:white;
+
+    padding:40px;
+
+    border-radius:15px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.3);
+
+}
+
+.card h1{
+
+    text-align:center;
+
+    color:#2563eb;
+
+    margin-bottom:10px;
+
+}
+
+.card p{
+
+    text-align:center;
+
+    color:#666;
+
+    margin-bottom:25px;
+
+}
+
+form{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+input{
+
+    width:100%;
+
+    padding:14px;
+
+    margin-bottom:18px;
+
+    border:1px solid #ddd;
+
+    border-radius:8px;
+
+    font-size:16px;
+
+}
+
+input:focus{
+
+    outline:none;
+
+    border-color:#2563eb;
+
+}
+
+.password-box{
+
+    position:relative;
+
+}
+
+.password-box span{
+
+    position:absolute;
+
+    right:15px;
+
+    top:14px;
+
+    cursor:pointer;
+
+}
+
+button{
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:#2563eb;
+
+    color:white;
+
+    font-size:17px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#1d4ed8;
+
+}
+
+.bottom{
+
+    margin-top:20px;
+
+    text-align:center;
+
+}
+
+.bottom a{
+
+    color:#2563eb;
+
+    text-decoration:none;
+
+    font-weight:bold;
+
+}
