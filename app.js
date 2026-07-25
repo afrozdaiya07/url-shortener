@@ -17,11 +17,14 @@ connectToMongoDB(process.env.MONGO_URL)
   .catch((err) => console.log(" MongoDB Error:", err));
 
 // Middleware
+// Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use("/user", userRoute);
+
+// Cookie Parser
 app.use(cookieParser());
 
+// Session
 app.use(
     session({
         secret: process.env.SESSION_SECRET,
@@ -29,6 +32,9 @@ app.use(
         saveUninitialized: false,
     })
 );
+
+// Routes
+app.use("/user", userRoute);
 
 // Static Files
 app.use(express.static(path.join(__dirname, "public")));
