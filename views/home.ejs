@@ -124,7 +124,7 @@ data-url="http://localhost:7001/<%=url.shortId%>">
 
 <i class="fa-regular fa-copy"></i>
 
-Copy
+copy
 
 </button>
 
@@ -158,11 +158,7 @@ Delete
 
 </div>
 
-<footer>
 
-Made with ❤️ by <b>Afroz Daiya</b>
-
-</footer>
 
 </div>
 
@@ -176,7 +172,7 @@ btn.addEventListener("click",()=>{
 
 navigator.clipboard.writeText(btn.dataset.url);
 
-btn.innerHTML="✅ Copied";
+btn.innerHTML="Copied";
 
 setTimeout(()=>{
 

@@ -7,7 +7,7 @@ if (togglePassword) {
 
         if (password.type === "password") {
             password.type = "text";
-            togglePassword.innerText = "🙈";
+            togglePassword.innerText ;
         } else {
             password.type = "password";
             togglePassword.innerText = "👁️";
@@ -19,7 +19,7 @@ if (togglePassword) {
 function copyURL(url) {
     navigator.clipboard.writeText(url)
         .then(() => {
-            alert("Short URL Copied Successfully ✅");
+            alert("Short URL Copied Successfully ");
         })
         .catch((err) => {
             console.log(err);
