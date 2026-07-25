@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dashboard</title>
+</head>
+
+<body>
+
+    <h2>Welcome <%= user.name %></h2>
+
+    <a href="/user/logout">Logout</a>
+
+    <hr>
+
+    <form action="/" method="POST">
+
+        <input
+            type="text"
+            name="redirectURL"
+            placeholder="Enter Long URL"
+            required
+        >
+
+        <button type="submit">
+            Shorten URL
+        </button>
+
+    </form>
+
+    <hr>
+
+    <table border="1">
+
+        <tr>
+            <th>Short URL</th>
+            <th>Original URL</th>
+            <th>Clicks</th>
+        </tr>
+
+        <% urls.forEach((url)=> { %>
+
+            <tr>
+
+                <td>
+                    http://localhost:7001/<%= url.shortId %>
+                </td>
+
+                <td>
+                    <%= url.redirectURL %>
+                </td>
+
+                <td>
+                    <%= url.clicks %>
+                </td>
+
+            </tr>
+
+        <% }) %>
+
+    </table>
+
+</body>
+
+</html>

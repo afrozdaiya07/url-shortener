@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 require("dotenv").config();
+const urlRoute = require("./routes/url");
 const userRoute = require("./routes/user");
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
@@ -44,9 +45,11 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
 // Home Route
-app.get("/", checkForAuthentication, (req, res) => {
-    res.send(`Welcome ${req.session.user.name}`);
-});
+
+app.use("/", urlRoute);
+// app.get("/", checkForAuthentication, (req, res) => {
+//     res.send(`Welcome ${req.session.user.name}`);
+// });
 // app.get("/", (req, res) => {
 //   res.send("Short URL Project Started");
 // });
