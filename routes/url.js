@@ -17,7 +17,7 @@ router.get("/", checkForAuthentication, getHomePage);
 
 // Create URL
 router.post("/", checkForAuthentication, createShortURL);
-router.get("/delete/:id", checkForAuthentication, deleteURL);
+router.post("/delete/:id", checkForAuthentication, deleteURL);
 router.get("/:shortId", redirectURL);
 
 module.exports = router;
