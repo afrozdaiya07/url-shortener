@@ -1,4 +1,4 @@
-/* Google Font */
+/* ===== Google Font ===== */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 *{
@@ -9,42 +9,45 @@
 }
 
 body{
-    background:linear-gradient(135deg,#2563eb,#7c3aed);
     min-height:100vh;
+    background:linear-gradient(135deg,#2563eb,#7c3aed);
+    overflow-x:hidden;
 }
 
-/* Navbar */
+/* ===== Navbar ===== */
 
 nav{
     width:100%;
-    background:rgba(255,255,255,.12);
-    backdrop-filter:blur(15px);
-    color:#fff;
-    padding:18px 60px;
+    height:75px;
     display:flex;
     justify-content:space-between;
     align-items:center;
+    padding:0 50px;
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(15px);
     box-shadow:0 5px 20px rgba(0,0,0,.2);
 }
 
 nav h2{
-    font-size:28px;
+    color:#fff;
+    font-size:30px;
     font-weight:700;
 }
 
 nav div{
     display:flex;
     align-items:center;
-    gap:15px;
+    gap:20px;
+    color:#fff;
     font-size:17px;
 }
 
 .logout{
-    background:#ef4444;
-    color:white;
-    text-decoration:none;
     padding:10px 20px;
     border-radius:8px;
+    text-decoration:none;
+    color:#fff;
+    background:#ef4444;
     transition:.3s;
 }
 
@@ -52,165 +55,95 @@ nav div{
     background:#dc2626;
 }
 
-/* Main Container */
+/* ===== Container ===== */
 
 .container{
-    width:92%;
-    margin:35px auto;
+    width:95%;
+    max-width:1400px;
+    margin:30px auto;
 }
 
-/* Cards */
+/* ===== Cards ===== */
 
 .card,
 .table-card{
+
     background:rgba(255,255,255,.15);
     backdrop-filter:blur(18px);
+
     border-radius:18px;
+
     padding:30px;
+
     margin-bottom:30px;
-    box-shadow:0 12px 35px rgba(0,0,0,.2);
+
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+
 }
 
 .card h2,
 .table-card h2{
+
     color:#fff;
+
     margin-bottom:20px;
+
+    font-size:28px;
+
 }
 
-/* Form */
+/* ===== Form ===== */
 
 .card form{
+
     display:flex;
+
     gap:15px;
+
 }
 
 .card input{
+
     flex:1;
-    padding:15px;
+
+    height:55px;
+
     border:none;
-    border-radius:10px;
+
     outline:none;
+
+    border-radius:10px;
+
+    padding:0 20px;
+
     font-size:16px;
+
 }
 
 .card button{
-    background:#22c55e;
-    color:white;
+
+    width:180px;
+
     border:none;
-    padding:15px 30px;
+
     border-radius:10px;
-    cursor:pointer;
+
+    background:#22c55e;
+
+    color:#fff;
+
     font-size:16px;
+
     font-weight:600;
+
+    cursor:pointer;
+
     transition:.3s;
+
 }
 
 .card button:hover{
+
     background:#16a34a;
-}
 
-/* Table */
-
-table{
-    width:100%;
-    border-collapse:collapse;
-    overflow:hidden;
-}
-
-th{
-    background:#1e3a8a;
-    color:white;
-    padding:16px;
-    font-size:15px;
-}
-
-td{
-    background:white;
-    padding:16px;
-    text-align:center;
-    vertical-align:middle;
-    border-bottom:1px solid #ddd;
-}
-
-tbody tr:hover td{
-    background:#f8fafc;
-}
-
-td a{
-    color:#2563eb;
-    text-decoration:none;
-    font-weight:600;
-}
-
-td a:hover{
-    text-decoration:underline;
-}
-
-/* Click Badge */
-
-.clicks{
-    background:#2563eb;
-    color:white;
-    padding:6px 14px;
-    border-radius:30px;
-    font-size:14px;
-}
-
-/* Buttons */
-
-.copy-btn,
-.delete-btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    width:110px;
-    height:42px;
-    border:none;
-    border-radius:8px;
-    color:white;
-    cursor:pointer;
-    text-decoration:none;
-    font-size:15px;
-    font-weight:600;
-    transition:.3s;
-}
-
-.copy-btn{
-    background:#22c55e;
-}
-
-.copy-btn:hover{
-    background:#16a34a;
-}
-
-.delete-btn{
-    background:#ef4444;
-}
-
-.delete-btn:hover{
-    background:#dc2626;
-}
-
-/* Responsive */
-
-@media(max-width:900px){
-
-    nav{
-        padding:20px;
-        flex-direction:column;
-        gap:15px;
-        text-align:center;
-    }
-
-    .card form{
-        flex-direction:column;
-    }
-
-    .table-card{
-        overflow-x:auto;
-    }
-
-    table{
-        min-width:900px;
-    }
 }
