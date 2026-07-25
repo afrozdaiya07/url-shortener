@@ -5,8 +5,8 @@ const {
     getHomePage,
     createShortURL,
     redirectURL,
+    deleteURL,
 } = require("../controllers/urlController");
-
 const {
     checkForAuthentication,
 } = require("../middlewares/auth");
@@ -17,6 +17,7 @@ router.get("/", checkForAuthentication, getHomePage);
 
 // Create URL
 router.post("/", checkForAuthentication, createShortURL);
-router.get("/:shortId", redirectURL);
 router.get("/delete/:id", checkForAuthentication, deleteURL);
+router.get("/:shortId", redirectURL);
+
 module.exports = router;

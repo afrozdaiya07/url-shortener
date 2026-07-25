@@ -121,12 +121,12 @@
                     </td>
 
                     <td>
-<a
-    href="/delete/<%= url._id %>"
-    class="delete-btn"
->
-    🗑
-</a>
+<button
+    type="button"
+    class="copy-btn"
+    onclick="copyURL('http://localhost:7001/<%= url.shortId %>')">
+    📋 Copy
+</button>
 
                     </td>
 
