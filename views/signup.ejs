@@ -15,6 +15,13 @@
 
         <h1>Create Account</h1>
         <p>Welcome! Create your Short URL account.</p>
+        <% if(error){ %>
+
+<div class="error">
+    <%= error %>
+</div>
+
+<% } %>
 
         <form action="/user/signup" method="POST">
 
