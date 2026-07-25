@@ -1,65 +1,148 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-</head>
 
+    <link rel="stylesheet" href="/css/dashboard.css">
+</head>
 <body>
 
-    <h2>Welcome <%= user.name %></h2>
+<nav>
 
-    <a href="/user/logout">Logout</a>
+    <h2>🔗 ShortURL</h2>
 
-    <hr>
+    <div>
 
-    <form action="/" method="POST">
+        Welcome,
+        <strong><%= user.name %></strong>
 
-        <input
-            type="text"
-            name="redirectURL"
-            placeholder="Enter Long URL"
-            required
-        >
+        <a href="/user/logout" class="logout">
+            Logout
+        </a>
 
-        <button type="submit">
-            Shorten URL
-        </button>
+    </div>
 
-    </form>
+</nav>
 
-    <hr>
+<div class="container">
 
-    <table border="1">
+    <div class="card">
 
-        <tr>
-            <th>Short URL</th>
-            <th>Original URL</th>
-            <th>Clicks</th>
-        </tr>
+        <h2>Create Short URL</h2>
 
-        <% urls.forEach((url)=> { %>
+        <form action="/" method="POST">
 
-            <tr>
+            <input
+                type="text"
+                name="redirectURL"
+                placeholder="Paste Long URL Here..."
+                required
+            >
 
-                <td>
-                    http://localhost:7001/<%= url.shortId %>
-                </td>
+            <button>
+                Shorten URL
+            </button>
 
-                <td>
-                    <%= url.redirectURL %>
-                </td>
+        </form>
 
-                <td>
-                    <%= url.clicks %>
-                </td>
+    </div>
 
-            </tr>
+    <div class="table-card">
 
-        <% }) %>
+        <h2>Your URLs</h2>
 
-    </table>
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>Short URL</th>
+
+                    <th>Original URL</th>
+
+                    <th>Clicks</th>
+
+                    <th>Copy</th>
+
+                    <th>Delete</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+            <% urls.forEach((url)=>{ %>
+
+                <tr>
+
+                    <td>
+
+                        <a
+                        href="/<%= url.shortId %>"
+                        target="_blank">
+
+                        http://localhost:7001/<%= url.shortId %>
+
+                        </a>
+
+                    </td>
+
+                    <td>
+
+                        <%= url.redirectURL %>
+
+                    </td>
+
+                    <td>
+
+                        <span class="clicks">
+
+                            <%= url.clicks %>
+
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <button
+                        class="copy-btn"
+
+                        onclick="copyURL('http://localhost:7001/<%= url.shortId %>')">
+
+                        📋
+
+                        </button>
+
+                    </td>
+
+                    <td>
+
+                        <button class="delete-btn">
+
+                            🗑
+
+                        </button>
+
+                    </td>
+
+                </tr>
+
+            <% }) %>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+<script src="/js/script.js"></script>
 
 </body>
-
 </html>

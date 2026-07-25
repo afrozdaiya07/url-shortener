@@ -19,5 +19,11 @@ if (togglePassword) {
         }
 
     });
+function copyURL(url){
 
+navigator.clipboard.writeText(url);
+
+alert("Short URL Copied Successfully ✅");
+
+}
 }
