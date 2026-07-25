@@ -2,6 +2,9 @@ const express = require("express");
 const path = require("path");
 require("dotenv").config();
 const userRoute = require("./routes/user");
+const session = require("express-session");
+const cookieParser = require("cookie-parser");
+const { checkForAuthentication } = require("./middlewares/auth");
 
 const { connectToMongoDB } = require("./connect");
 
@@ -17,6 +20,15 @@ connectToMongoDB(process.env.MONGO_URL)
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use("/user", userRoute);
+app.use(cookieParser());
+
+app.use(
+    session({
+        secret: process.env.SESSION_SECRET,
+        resave: false,
+        saveUninitialized: false,
+    })
+);
 
 // Static Files
 app.use(express.static(path.join(__dirname, "public")));
@@ -26,9 +38,12 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
 // Home Route
-app.get("/", (req, res) => {
-  res.send("Short URL Project Started");
+app.get("/", checkForAuthentication, (req, res) => {
+    res.send(`Welcome ${req.session.user.name}`);
 });
+// app.get("/", (req, res) => {
+//   res.send("Short URL Project Started");
+// });
 
 // Server
 app.listen(PORT, () => {

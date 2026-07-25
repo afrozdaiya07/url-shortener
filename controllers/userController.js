@@ -37,6 +37,7 @@ async function signupUser(req, res) {
 // Login Page
 async function getLoginPage(req, res) {
     res.render("login");
+  
 }
 
 // Login User
