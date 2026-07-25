@@ -59,9 +59,16 @@ async function redirectURL(req, res) {
 
     res.redirect(entry.redirectURL);
 }
+async function deleteURL(req, res) {
 
+    await URL.findByIdAndDelete(req.params.id);
+
+    res.redirect("/");
+
+}
 module.exports = {
     getHomePage,
     createShortURL,
     redirectURL,
+    deleteURL,
 };
