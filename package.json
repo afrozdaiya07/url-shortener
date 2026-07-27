@@ -16,7 +16,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node app.js",
-     "dev": "nodemon app.js"
+    "dev": "nodemon app.js"
   },
   "dependencies": {
     "bcrypt": "^6.0.0",
@@ -25,7 +25,8 @@
     "ejs": "^6.0.1",
     "express": "^5.2.1",
     "express-session": "^1.19.0",
-    "mongoose": "^9.8.0",
+    "mongodb": "^6.21.0",
+    "mongoose": "^8.18.0",
     "nanoid": "^6.0.0"
   }
 }
