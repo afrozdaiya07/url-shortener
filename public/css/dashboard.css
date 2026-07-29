@@ -1,3 +1,6 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 *{
     margin:0;
     padding:0;
@@ -14,6 +17,8 @@ body{
     max-width:1200px;
     margin:auto;
 }
+
+/* Header */
 
 header{
     display:flex;
@@ -32,35 +37,55 @@ header{
     gap:10px;
 }
 
+.logo i{
+    font-size:28px;
+    color:#6c63ff;
+}
+
+.logo h2{
+    font-size:30px;
+}
+
 .logo h2 span{
     color:#6c63ff;
 }
 
+.user{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.user p{
+    font-size:17px;
+}
+
+/* Logout Button */
+
 .logout{
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 12px 24px;
-    border: 2px solid #6c63ff;
-    border-radius: 12px;
-    background: #fff;
-    color: #6c63ff;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 600;
-    transition: 0.3s ease;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:12px 24px;
+    border:2px solid #6c63ff;
+    border-radius:12px;
+    background:#fff;
+    color:#6c63ff;
+    text-decoration:none;
+    font-size:16px;
+    font-weight:600;
+    transition:.3s;
 }
 
 .logout:hover{
-    background: #6c63ff;
-    color: #fff;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(108,99,255,.3);
+    background:#6c63ff;
+    color:#fff;
+    transform:translateY(-2px);
+    box-shadow:0 8px 20px rgba(108,99,255,.3);
 }
 
-.logout i{
-    font-size: 18px;
-}
+/* Cards */
 
 .card{
     background:#fff;
@@ -69,6 +94,13 @@ header{
     margin-bottom:30px;
     box-shadow:0 8px 20px rgba(0,0,0,.08);
 }
+
+.card h1,
+.card h2{
+    margin-bottom:20px;
+}
+
+/* Form */
 
 form{
     display:flex;
@@ -82,6 +114,11 @@ input{
     border:1px solid #ddd;
     border-radius:10px;
     font-size:16px;
+    outline:none;
+}
+
+input:focus{
+    border-color:#6c63ff;
 }
 
 button{
@@ -91,7 +128,15 @@ button{
     background:#6c63ff;
     color:#fff;
     cursor:pointer;
+    font-size:15px;
+    transition:.3s;
 }
+
+button:hover{
+    background:#574bdb;
+}
+
+/* Table */
 
 table{
     width:100%;
@@ -99,26 +144,184 @@ table{
     margin-top:20px;
 }
 
-th,td{
+th,
+td{
     padding:15px;
     border-bottom:1px solid #eee;
     text-align:left;
+    vertical-align:middle;
 }
 
 th{
     background:#f3f4ff;
 }
 
+td a{
+    color:#6c63ff;
+    text-decoration:none;
+    word-break:break-word;
+}
+
+/* Buttons */
+
 .copyBtn{
     background:#6c63ff;
+}
+
+.copyBtn:hover{
+    background:#574bdb;
 }
 
 .deleteBtn{
     background:#ff4d4d;
 }
 
+.deleteBtn:hover{
+    background:#e53935;
+}
+
+/* Footer */
+
 footer{
     text-align:center;
     margin-top:20px;
     color:#666;
+    font-size:15px;
+}
+
+/* ===========================
+   Responsive Design
+=========================== */
+
+/* Tablet */
+
+@media (max-width:992px){
+
+    body{
+        padding:20px;
+    }
+
+    header{
+        flex-direction:column;
+        gap:20px;
+        text-align:center;
+    }
+
+    .user{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    form{
+        flex-direction:column;
+    }
+
+    input,
+    button{
+        width:100%;
+    }
+
+}
+
+/* Mobile */
+
+@media (max-width:768px){
+
+    body{
+        padding:15px;
+    }
+
+    .container{
+        width:100%;
+    }
+
+    header{
+        padding:20px;
+    }
+
+    .logo{
+        flex-direction:column;
+    }
+
+    .logo h2{
+        font-size:24px;
+    }
+
+    .user p{
+        font-size:15px;
+    }
+
+    .logout{
+        width:100%;
+    }
+
+    .card{
+        padding:20px;
+        overflow-x:auto;
+    }
+
+    .card h1,
+    .card h2{
+        text-align:center;
+        font-size:22px;
+    }
+
+    table{
+        min-width:700px;
+    }
+
+    th,
+    td{
+        padding:12px;
+        font-size:14px;
+        white-space:nowrap;
+    }
+
+    .copyBtn,
+    .deleteBtn{
+        width:100%;
+        padding:10px;
+    }
+
+}
+
+/* Small Mobile */
+
+@media (max-width:480px){
+
+    body{
+        padding:10px;
+    }
+
+    header{
+        padding:15px;
+    }
+
+    .logo h2{
+        font-size:20px;
+    }
+
+    .card{
+        padding:15px;
+    }
+
+    .card h1,
+    .card h2{
+        font-size:20px;
+    }
+
+    input{
+        padding:12px;
+        font-size:14px;
+    }
+
+    button{
+        padding:12px;
+        font-size:14px;
+    }
+
+    footer{
+        font-size:13px;
+    }
+
 }
