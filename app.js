@@ -8,6 +8,9 @@ const cookieParser = require("cookie-parser");
 const { checkForAuthentication } = require("./middlewares/auth");
 
 const { connectToMongoDB } = require("./connect");
+const dns = require('dns');
+dns.setDefaultResultOrder('ipv4first');
+dns.setServers(['8.8.8.8', '8.8.4.4']);
 
 const app = express();
 const PORT = process.env.PORT || 7001;
